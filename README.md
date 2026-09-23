@@ -1,259 +1,490 @@
-# SOLDRIP
+<div align="center">
 
-**Devnet SOL. One drip at a time.**
+# 💧 SOLDRIP
 
-SOLDRIP is a polished, production-ready Solana **Devnet** faucet: connect a
-wallet, see your Devnet balance, claim test SOL, and watch the transaction
-land — all wrapped in a cinematic, glassmorphic Web3 interface with a
-custom-built animated ASCII/canvas background.
+### Devnet SOL. One drip at a time.
 
-> ⚠️ **This project interacts with Solana Devnet only and does not
-> distribute real SOL.**
+A polished **Solana Devnet faucet** with real wallet integration, live balance tracking, airdrop confirmations, and a custom animated ASCII/Canvas 2D background.
 
----
+<p>
+  <img src="https://img.shields.io/badge/Solana-Devnet-9945FF?style=for-the-badge&logo=solana&logoColor=white" alt="Solana Devnet" />
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+</p>
 
-## Features
+<p>
+  <img src="https://img.shields.io/badge/Phantom-AB9FF2?style=flat-square&logo=phantom&logoColor=white" alt="Phantom" />
+  <img src="https://img.shields.io/badge/Solflare-F6C343?style=flat-square" alt="Solflare" />
+  <img src="https://img.shields.io/badge/Canvas_2D-Custom_Renderer-111827?style=flat-square" alt="Canvas 2D" />
+  <img src="https://img.shields.io/badge/Network-Devnet-14F195?style=flat-square&logo=solana&logoColor=black" alt="Devnet" />
+</p>
 
-- **Wallet connect** via `@solana/wallet-adapter-react` — Phantom and
-  Solflare out of the box, plus any Wallet Standard wallet (Backpack
-  included) auto-detected at runtime.
-- **Live Devnet balance** with polling and an animated count-up on change.
-- **One-click airdrop claims** with preset (0.5 / 1 / 2 SOL) and custom
-  amounts, clamped to a configurable maximum.
-- **Real transaction confirmation** — requests the airdrop, polls for
-  confirmation, and surfaces the signature with a link to Solana Explorer.
-- **Client-side cooldown** persisted in `localStorage` so a page refresh
-  can't be used to spam the faucet.
-- **Human-readable error handling** for rate limits, RPC failures, wallet
-  rejections, network errors, and expired transactions.
-- **A from-scratch ASCII/canvas renderer** — not a static image — that
-  samples a source texture into a grid and redraws it every frame as one of
-  19 render modes (pixels, characters, dots, dither, mosaic, hexagons,
-  matrix rain, and more), with tone/color adjustments, post-effects
-  (vignette, scanlines, chromatic edge, bloom, film grain), and five
-  animation styles (flicker, wave, pulse, shimmer, ripple).
-- Fully responsive, keyboard-navigable, and respects
-  `prefers-reduced-motion`.
+> ⚠️ **SOLDRIP interacts with Solana Devnet only and does not distribute real SOL.**
+
+</div>
 
 ---
 
-## Tech stack
+## ✨ About
 
-| Layer      | Choice                                                                 |
-| ---------- | ----------------------------------------------------------------------- |
-| Framework  | React 18 + TypeScript, built with Vite                                 |
-| Styling    | Tailwind CSS                                                           |
-| Icons      | lucide-react                                                           |
-| Solana     | `@solana/web3.js`, `@solana/wallet-adapter-react(-ui)`, `-wallets`      |
-| Background | A custom canvas renderer — no third-party ASCII/art library            |
+SOLDRIP is a modern **Solana Devnet faucet** designed to make getting test SOL simple while keeping the experience visually polished.
 
-No state-management library, no CSS-in-JS, no UI kit beyond Tailwind — kept
-intentionally lean so the repo is easy to read end to end.
+Connect a wallet, check your Devnet balance, request test SOL, confirm the transaction, and view it directly on Solana Explorer.
+
+The interface combines real Solana functionality with a custom-built animated ASCII/Canvas 2D rendering engine.
 
 ---
 
-## Architecture
+## 🚀 Features
 
-```
+### 🔐 Wallet & Solana
+
+- Connect Phantom and Solflare wallets
+- Wallet Standard wallet detection
+- Live Devnet balance
+- Animated balance updates
+- One-click airdrops
+- Preset amounts: `0.5 / 1 / 2 SOL`
+- Custom claim amounts
+- Configurable maximum claim amount
+- Real transaction confirmation
+- Solana Explorer transaction links
+
+### ⚡ User Experience
+
+- Client-side claim cooldown
+- Cooldown persisted using `localStorage`
+- Human-readable transaction errors
+- RPC failure handling
+- Wallet rejection handling
+- Network error handling
+- Expired transaction handling
+- Fully responsive interface
+- Keyboard navigable
+- `prefers-reduced-motion` support
+
+### 🎨 ASCII / Canvas Renderer
+
+Built completely from scratch using the **Canvas 2D API**.
+
+Features include:
+
+- 19 rendering modes
+- Pixel rendering
+- Character rendering
+- Dots
+- Dithering
+- Mosaic
+- Hexagons
+- Matrix-style rendering
+- Custom brightness and contrast
+- Saturation and grayscale processing
+- Tint effects
+- Vignette
+- Scanlines
+- Chromatic edge effects
+- Bloom
+- Film grain
+- Flicker animation
+- Wave animation
+- Pulse animation
+- Shimmer animation
+- Ripple animation
+
+The background can also react to a successful airdrop with a temporary visual boost.
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+
+<p>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+</p>
+
+### Solana
+
+<p>
+  <img src="https://img.shields.io/badge/Solana-Web3.js-9945FF?style=for-the-badge&logo=solana&logoColor=white" />
+  <img src="https://img.shields.io/badge/Wallet_Adapter-Phantom_%7C_Solflare-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Cluster-Devnet-14F195?style=for-the-badge&logo=solana&logoColor=black" />
+</p>
+
+### Rendering
+
+<p>
+  <img src="https://img.shields.io/badge/Canvas-2D_API-111827?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Rendering-Custom_Engine-7C3AED?style=for-the-badge" />
+</p>
+
+### Utilities
+
+<p>
+  <img src="https://img.shields.io/badge/lucide--react-Icons-F59E0B?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/localStorage-Client_State-2563EB?style=for-the-badge" />
+</p>
+
+---
+
+## 🏗️ Project Architecture
+
+```text
 src/
-  components/
-    AsciiBackground/   full-screen canvas background (mounts AsciiRenderer)
-    Navbar/            logo, DEVNET badge, Explorer/GitHub links
-    WalletButton/      "Connect Wallet" trigger -> wallet-adapter modal
-    WalletStatus/      connected address, copy, disconnect
-    BalanceCard/       live Devnet balance with animated count-up
-    AirdropForm/       amount selector + claim button + result
-    TransactionResult/ success (signature + Explorer link) / error state
-    CooldownTimer/     countdown between claims
-    Toast/             transient success/error notifications
-    Footer/
-  hooks/
-    useWalletBalance.ts  polls the connected wallet's Devnet balance
-    useAirdrop.ts        drives requestAirdrop -> confirmTransaction
-    useCooldown.ts       localStorage-backed client-side rate limit
-  lib/
-    solana.ts            connection, formatting, validation, error mapping
-    ascii/
-      renderer.ts         AsciiRenderer class: sampling, loop, resize, DPR
-      modes.ts             per-cell drawing for all 19 render modes
-      colors.ts            brightness/contrast/saturation/tint math
-      animation.ts          time-based per-cell modulation for 5 anim styles
-      effects.ts            full-frame post effects
-  providers/
-    WalletContextProvider.tsx  Connection/Wallet/Modal providers, adapters
-  types/
-    index.ts             shared app + ASCII config types
-  App.tsx
-  main.tsx
-  index.css
+├── components/
+│   ├── AsciiBackground/
+│   │   └── Full-screen Canvas background
+│   ├── Navbar/
+│   │   └── Logo, Devnet badge and navigation
+│   ├── WalletButton/
+│   │   └── Wallet connection trigger
+│   ├── WalletStatus/
+│   │   └── Connected wallet information
+│   ├── BalanceCard/
+│   │   └── Live Devnet balance
+│   ├── AirdropForm/
+│   │   └── Amount selection and claim action
+│   ├── TransactionResult/
+│   │   └── Success and error states
+│   ├── CooldownTimer/
+│   │   └── Claim cooldown countdown
+│   ├── Toast/
+│   │   └── Success/error notifications
+│   └── Footer/
+│
+├── hooks/
+│   ├── useWalletBalance.ts
+│   ├── useAirdrop.ts
+│   └── useCooldown.ts
+│
+├── lib/
+│   ├── solana.ts
+│   │
+│   └── ascii/
+│       ├── renderer.ts
+│       ├── modes.ts
+│       ├── colors.ts
+│       ├── animation.ts
+│       └── effects.ts
+│
+├── providers/
+│   └── WalletContextProvider.tsx
+│
+├── types/
+│   └── index.ts
+│
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-Nothing lives directly in `App.tsx` beyond composition — every piece of UI
-and every side effect (balance polling, airdrop requests, cooldown state)
-has its own file.
+The codebase keeps UI, Solana logic, hooks, rendering logic and providers separated so each part can be understood and modified independently.
 
 ---
 
-## How the ASCII renderer works
+## 🎨 ASCII Rendering Pipeline
 
-`AsciiRenderer` (in `src/lib/ascii/renderer.ts`) is a plain TypeScript class
-— framework-agnostic, owns its own `requestAnimationFrame` loop — that
-`AsciiBackground.tsx` mounts on a full-screen `<canvas>`.
+SOLDRIP's background is not a static image.
 
-1. **Sample.** The source (an image you provide, or a procedurally
-   generated fallback texture — see below) is drawn into a small **offscreen
-   canvas** sized to the grid (`width / cellSize` × `height / cellSize`),
-   using `drawImage`'s scaling to do the downsampling cheaply.
-2. **Read.** `getImageData` pulls that low-res canvas back out as raw RGBA,
-   one read per resize/config change rather than per frame.
-3. **Score each cell.** For every grid cell: average RGB → perceptual
-   luminance → a 0–1 brightness value, plus a simple local-gradient "edge"
-   score (difference from the right/bottom neighbor) that feeds
-   `edgeEmphasis`.
-4. **Render.** Each frame, every cell's brightness is adjusted by
-   `contrast`, `edgeEmphasis`, `invert`, and a **time-based animation
-   modulation** (`animation.ts` — a closed-form function of cell position +
-   elapsed time, not per-frame `Math.random()`, so it stays deterministic
-   and cheap), then handed to `drawCell()` in `modes.ts`, which switches on
-   `renderMode` to draw a square, a monospace character, a dot, a diamond, a
-   hexagon, a matrix-style glyph, etc. at that cell's position.
-5. **Color.** Each cell's color runs through `brightness/contrast` →
-   `saturation` → `grayscale` → `tint` (in `colors.ts`) before being handed
-   to the drawing step.
-6. **Post effects.** After the grid is drawn, `effects.ts` layers
-   full-frame effects — vignette, scanlines, a cheap edge-only chromatic
-   aberration, bloom (a blurred screen-blended re-draw of the frame), and
-   tiled film grain — directly on the 2D context.
-7. **React.** `AsciiRenderer.triggerBoost()` is called by `App.tsx` right
-   after a successful claim; for ~1.4s it raises the brightness multiplier
-   and tint opacity so the background visibly "reacts."
+The renderer samples a source texture and converts it into animated cells in real time.
 
-Resizing is handled with a `ResizeObserver` on the canvas's parent, DPR is
-capped at 2 and applied via `ctx.setTransform`, and `prefers-reduced-motion`
-disables the animation modulation entirely.
+```text
+Source Image / Procedural Texture
+                ↓
+        Offscreen Canvas
+                ↓
+        Downsample Texture
+                ↓
+          Read Pixel Data
+                ↓
+       Calculate Luminance
+                ↓
+         Edge Detection
+                ↓
+     Brightness / Contrast
+                ↓
+      Animation Modulation
+                ↓
+         Render Cell
+                ↓
+       Color Processing
+                ↓
+        Post Processing
+                ↓
+         Final Canvas
+```
 
-**No external/shipped image is required.** If `VITE_ASCII_SOURCE_IMAGE` is
-unset, or the image fails to load, `drawProceduralSource()` generates a
-deterministic layered radial-gradient "terrain" texture directly on the
-offscreen canvas — so the renderer's full pipeline (sampling, luminance,
-edge detection, render modes, animation) still runs against real per-cell
-variance, with zero network dependency. Drop your own image in
-`public/assets/` and point the env var at it to use a real photo/artwork
-instead — see `public/assets/README.md`.
+### Rendering Steps
 
----
+**1. Sampling**
+The source is downsampled to match the renderer's grid.
 
-## How Solana Devnet airdrops work
+**2. Pixel Analysis**
+RGBA values are read from the low-resolution canvas.
 
-- The app connects to Devnet via `clusterApiUrl("devnet")` by default
-  (override with `VITE_SOLANA_RPC_URL` for a dedicated provider).
-- `useAirdrop` calls `connection.requestAirdrop(publicKey, lamports)`, then
-  fetches the latest blockhash and calls `connection.confirmTransaction(...)`
-  to wait for confirmation before reporting success.
-- Devnet's public faucet is itself rate-limited and capped per request by
-  Solana Labs — SOLDRIP's own `VITE_MAX_AIRDROP_SOL` and cooldown are an
-  additional, configurable client-side guardrail on top of that, not a
-  replacement for it.
-- Errors are mapped to plain-English messages in
-  `describeAirdropError()` (`src/lib/solana.ts`) — rate limits, RPC
-  failures, wallet rejections, network errors, and expired blockhashes are
-  all handled distinctly.
+**3. Luminance**
+Each cell receives a brightness value based on perceived luminance.
 
-### About abuse prevention
+**4. Edge Detection**
+Local gradients are calculated to enhance important visual edges.
 
-This is a static frontend talking directly to a public Devnet RPC, so the
-only rate-limiting SOLDRIP can enforce itself is client-side (the
-cooldown timer + max-amount cap). That's a UX guardrail, not a security
-boundary — a determined user can clear `localStorage` and call the RPC
-directly regardless of what this UI does. If you deploy this publicly and
-want real abuse prevention, put a small backend in front of the airdrop
-call (a serverless function is enough) that enforces server-side rate
-limiting per IP/wallet before it ever talks to the RPC, and keep any
-provider API keys there rather than in `VITE_`-prefixed frontend env vars.
+**5. Cell Rendering**
+The selected render mode draws the cell.
+
+**6. Color Processing**
+Brightness, contrast, saturation, grayscale and tint are applied.
+
+**7. Post Processing**
+Additional effects such as bloom, scanlines, vignette and film grain are added.
+
+**8. Animation**
+Time-based formulas animate the renderer without relying on random values every frame.
 
 ---
 
-## Environment variables
+## ⚡ Solana Devnet Flow
 
-Copy `.env.example` to `.env` and adjust as needed:
+SOLDRIP connects to Solana Devnet by default:
 
-| Variable                    | Default                          | Description                                      |
-| ---------------------------- | --------------------------------- | ------------------------------------------------- |
-| `VITE_SOLANA_RPC_URL`        | `clusterApiUrl("devnet")`         | Devnet RPC endpoint                                |
-| `VITE_EXPLORER_CLUSTER`      | `devnet`                          | Cluster query param for Explorer links             |
-| `VITE_MAX_AIRDROP_SOL`       | `2`                               | Max SOL per claim                                  |
-| `VITE_COOLDOWN_SECONDS`      | `60`                              | Seconds between claims per browser                 |
-| `VITE_ASCII_SOURCE_IMAGE`    | *(unset → procedural fallback)*   | Path under `/public` to the background source image |
+```ts
+clusterApiUrl("devnet")
+```
 
-All values here are safe to expose to the client — never put a secret key
-in a `VITE_`-prefixed variable.
+A custom RPC endpoint can be supplied with:
+
+```env
+VITE_SOLANA_RPC_URL=
+```
+
+### Claim Flow
+
+```text
+Connect Wallet
+      ↓
+Read Wallet Address
+      ↓
+Select SOL Amount
+      ↓
+requestAirdrop()
+      ↓
+Fetch Latest Blockhash
+      ↓
+confirmTransaction()
+      ↓
+Refresh Balance
+      ↓
+Show Transaction Signature
+      ↓
+Open Solana Explorer
+```
 
 ---
 
-## Installation
+## 🛡️ Abuse Prevention
+
+The current project is a static frontend communicating directly with a public Devnet RPC.
+
+Therefore, the built-in cooldown and maximum amount are **client-side guardrails**, not a true security boundary.
+
+A user can technically clear `localStorage` or interact with the RPC directly.
+
+For a public deployment, a backend or serverless function should sit between the frontend and the Solana RPC.
+
+```text
+Frontend
+   ↓
+Backend / Serverless Function
+   ↓
+Rate Limiting
+   ↓
+Wallet + Amount Validation
+   ↓
+Solana RPC
+```
+
+This would allow server-side enforcement of:
+
+- IP-based rate limits
+- Wallet-based rate limits
+- Claim limits
+- Request validation
+- RPC provider protection
+
+---
+
+## ⚙️ Environment Variables
+
+Copy the example environment file:
 
 ```bash
-npm install
 cp .env.example .env
 ```
 
-## Development
+| Variable                  | Default    | Description              |
+| -------------------------- | ---------- | ------------------------ |
+| `VITE_SOLANA_RPC_URL`      | Devnet RPC | Solana RPC endpoint       |
+| `VITE_EXPLORER_CLUSTER`    | `devnet`   | Explorer cluster          |
+| `VITE_MAX_AIRDROP_SOL`     | `2`        | Maximum SOL per claim     |
+| `VITE_COOLDOWN_SECONDS`    | `60`       | Cooldown between claims   |
+| `VITE_ASCII_SOURCE_IMAGE`  | unset      | Optional source image     |
+
+> ⚠️ Never place secret keys or sensitive credentials inside `VITE_` environment variables.
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd soldrip
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+```bash
+cp .env.example .env
+```
+
+### 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-## Production build
+Open the local URL shown in your terminal.
+
+---
+
+## 📦 Production Build
 
 ```bash
 npm run build
+```
+
+Preview the production build:
+
+```bash
 npm run preview
 ```
 
-`npm run build` runs a full TypeScript project check (`tsc -b`) before
-bundling with Vite, so type errors fail the build rather than shipping.
+The build performs the TypeScript project check before bundling with Vite.
 
 ---
 
-## Deployment
+## ☁️ Deployment
 
-SOLDRIP is a static Vite build — deploy the `dist/` output anywhere that
-serves static files.
+SOLDRIP produces a static Vite build.
 
-**Vercel** (recommended):
+The generated output is:
 
-1. Push this repo to GitHub.
-2. Import it in Vercel. Framework preset: **Vite**.
-3. Set any of the environment variables above under Project Settings →
-   Environment Variables (all are optional; sane defaults are baked in).
-4. Deploy — build command `npm run build`, output directory `dist`.
+```text
+dist/
+```
 
-If you later add a backend for server-side rate limiting (see "About abuse
-prevention" above), deploy it separately (e.g. as a Vercel Serverless
-Function or a small standalone service) — the frontend only needs its
-public URL.
+### Vercel
 
----
+Recommended settings:
 
-## Project structure
+```text
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+```
 
-See [Architecture](#architecture) above for the annotated `src/` tree.
+Add your environment variables inside the Vercel project settings before deploying.
 
 ---
 
-## Future improvements
+## 🗺️ Roadmap
 
-- Server-side rate limiting per wallet/IP for public deployments
-- Persist claim history per wallet (beyond the single most recent result)
-- Additional wallet adapters (Ledger, Torus) behind a "more wallets" toggle
-- A settings panel to tweak `AsciiConfig` (render mode, animation style,
-  post effects) live, for anyone forking this as a design playground
-- Swap the procedural fallback texture for a shipped reference image and
-  compare renderer output side-by-side
+- [ ] Server-side wallet/IP rate limiting
+- [ ] Persistent claim history
+- [ ] More wallet adapters
+- [ ] Live ASCII configuration panel
+- [ ] Additional rendering modes
+- [ ] Optional reference image support
+- [ ] Transaction history
+- [ ] Dedicated faucet backend
+- [ ] Improved analytics
 
 ---
 
-## Disclaimer
+## 🎯 Project Focus
 
-This project interacts with Solana Devnet only and does not distribute
-real SOL.
+SOLDRIP combines three areas of development:
+
+### ⛓️ Solana Development
+Wallet integration, Devnet transactions, RPC communication, confirmations and Explorer integration.
+
+### ⚛️ Frontend Engineering
+React, TypeScript, reusable components, hooks and responsive UI design.
+
+### 🎨 Graphics Programming
+Canvas 2D rendering, image sampling, pixel analysis, procedural textures, animation and post-processing.
+
+---
+
+## 📸 Screenshots
+
+Add screenshots here:
+
+```text
+/docs/
+├── hero.png
+├── wallet.png
+├── airdrop.png
+└── transaction.png
+```
+
+Example:
+
+```markdown
+![SOLDRIP Interface](docs/hero.png)
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, ideas and improvements are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test locally
+5. Open a pull request
+
+---
+
+## 📜 Disclaimer
+
+SOLDRIP interacts with **Solana Devnet only**.
+
+It does **not** distribute real SOL.
+
+Devnet SOL is intended for development and testing purposes.
+
+---
+
+<div align="center">
+
+## 💧 SOLDRIP
+
+### Build. Test. Ship.
+
+Made with ⚡ for the Solana ecosystem.
+
+</div>
